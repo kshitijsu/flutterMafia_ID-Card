@@ -76,7 +76,7 @@ class MafiaCard extends StatelessWidget {
               ),
               Row(children: <Widget>[
                 Icon(Icons.email, color: Colors.white),
-                SizedBox(width: 10),
+                SizedBox(width: 20),
                 Text('example@gmail.com',
                     style: TextStyle(
                       color: Colors.amber,
