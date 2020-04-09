@@ -4,7 +4,13 @@ void main() => runApp(MaterialApp(
       home: MafiaCard(),
     ));
 
-class MafiaCard extends StatelessWidget {
+class MafiaCard extends StatefulWidget {
+  @override
+  _MafiaCardState createState() => _MafiaCardState();
+}
+
+class _MafiaCardState extends State<MafiaCard> {
+  int mafiaLevel = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,6 +19,15 @@ class MafiaCard extends StatelessWidget {
         title: Text('Mafia ID Card'),
         centerTitle: true,
         backgroundColor: Colors.deepPurple,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            mafiaLevel += 1;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.teal,
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
@@ -63,7 +78,7 @@ class MafiaCard extends StatelessWidget {
                 height: 10,
               ),
               Text(
-                '9',
+                '$mafiaLevel',
                 style: TextStyle(
                   color: Colors.amber,
                   fontSize: 28,
